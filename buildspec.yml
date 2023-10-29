@@ -22,9 +22,9 @@ phases:
   build:
     commands:
       - echo Building Docker image...
-      - docker build -t $DOCKER_IMAGE_NAME .
+      - docker build -x -t $DOCKER_IMAGE_NAME .
 
   post_build:
     commands:
       - echo Pushing Docker image to Docker Hub...
-      - docker push $DOCKER_IMAGE_NAME
+      - docker push -x $DOCKER_IMAGE_NAME
