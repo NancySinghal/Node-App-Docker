@@ -24,7 +24,8 @@ phases:
   build:
     commands:
       - echo Building Docker image...
-      - docker build -t $DOCKER_IMAGE_NAME -v /var/run/docker.sock:/var/run/docker.sock .
+      - service docker start
+      - docker build -t $DOCKER_IMAGE_NAME .
 
   post_build:
     commands:
