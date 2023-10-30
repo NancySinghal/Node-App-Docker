@@ -2,16 +2,17 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/myapp
+    destination: /home/sigmoid/Nancy/node-docker/node-docker
+permissions:
+  - object: /home/sigmoid/Nancy/node-docker/node-docker
+    pattern: "**"
+    owner: ec2-user
+    group: apache
+    mode: 755
+    type:
+      - directory
 hooks:
-  BeforeInstall:
-    - location: scripts/before_install.sh
-      timeout: 300
-      runas: root
   AfterInstall:
     - location: scripts/after_install.sh
-      timeout: 300
-  ApplicationStart:
-    - location: scripts/application_start.sh
       timeout: 300
       runas: root
