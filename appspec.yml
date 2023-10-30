@@ -3,13 +3,7 @@ os: linux
 files:
   - source: /
     destination: /home/sigmoid/Nancy/node-docker/node-docker
-permissions:
-  - object: /home/sigmoid/Nancy/node-docker/node-docker
-    pattern: "**"
-    group: apache
-    mode: 755
-    type:
-      - directory
+
 hooks:
   AfterInstall:
     - location: scripts/after_install.sh
