@@ -24,6 +24,3 @@ phases:
   post_build:
     commands:
       - docker push $DOCKER_IMAGE_NAME
-
-artifacts:
-  files: Dockerfile
