@@ -62,8 +62,6 @@ jobs:
         uses: azure/k8s-set-context@v1
         with:
           kubeconfig: ${{ secrets.KUBE_CONFIG }}
-          context: minikube
-          method: inline
 
       - name: Deploy to Kubernetes
         run: |
