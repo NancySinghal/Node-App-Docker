@@ -13,13 +13,9 @@ phases:
     commands:
       - echo Installing dependencies...
       - npm install
-      - apt-get update -y
-      - apt-get install -y docker.io
 
   pre_build:
     commands:
-      - aws --version
-      - aws configure list
       - echo Logging in to Docker Hub...
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
@@ -27,7 +23,7 @@ phases:
     commands:
       - echo Building Docker image...
       - docker -v
-      - docker build --privileged -t $DOCKER_IMAGE_NAME .
+      - docker build -t $DOCKER_IMAGE_NAME .
 
   post_build:
     commands:
