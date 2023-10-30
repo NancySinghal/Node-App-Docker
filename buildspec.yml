@@ -26,7 +26,6 @@ phases:
   build:
     commands:
       - echo Building Docker image...
-      - service docker start
       - docker build -t $DOCKER_IMAGE_NAME .
 
   post_build:
