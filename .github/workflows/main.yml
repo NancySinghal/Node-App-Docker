@@ -62,6 +62,7 @@ jobs:
         uses: azure/k8s-set-context@v1
         with:
           kubeconfig: /home/sigmoid/.kube/config
+          context: minikube
 
       - name: Deploy to Kubernetes
         run: |
