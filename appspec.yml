@@ -6,7 +6,6 @@ files:
 permissions:
   - object: /home/sigmoid/Nancy/node-docker/node-docker
     pattern: "**"
-    owner: ec2-user
     group: apache
     mode: 755
     type:
