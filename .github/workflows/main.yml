@@ -59,9 +59,9 @@ jobs:
           node-version: 14
 
       - name: Set up Kubectl
-        run: |
-          export KUBECONFIG=/home/sigmoid/.kube/config
-          kubectl config use-context minikube
+        uses: azure/k8s-set-context@v1
+        with:
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
 
       - name: Deploy to Kubernetes
         run: |
