@@ -4,7 +4,3 @@ files:
   - source: /
     destination: /home/sigmoid/Nancy/node-docker/node-docker
 
-hooks:
-  AfterInstall:
-    - location: scripts/after_install.sh
-      timeout: 300
