@@ -58,6 +58,6 @@ jobs:
         with:
           node-version: 14
 
-       - name: Deploy to Production
+      - name: Deploy to Production
         run: |
           # Add your deployment
