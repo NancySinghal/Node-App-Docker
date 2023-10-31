@@ -66,3 +66,5 @@ jobs:
       - name: Deploy to Kubernetes
         run: |
           kubectl apply -f deployment.yml
+        env:
+          KUBECONFIG: ${{ secrets.KUBE_CONFIG }}
