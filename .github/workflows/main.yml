@@ -58,6 +58,11 @@ jobs:
         with:
           node-version: 14
 
-       - name: Deploy to Production
+      - name: Set up Kubectl
+        uses: azure/k8s-set-context@v1
+        with:
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+
+      - name: Deploy to Kubernetes
         run: |
-          # Add your deployment
+          kubectl apply -f /home/sigmoid/Nancy/node-docker/deployment.yml
