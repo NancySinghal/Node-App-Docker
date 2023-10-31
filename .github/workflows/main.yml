@@ -65,4 +65,4 @@ jobs:
 
       - name: Deploy to Kubernetes
         run: |
-          kubectl apply -f /home/sigmoid/Nancy/node-docker/deployment.yml
+          kubectl apply -f deployment.yml
